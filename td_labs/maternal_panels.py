@@ -13,7 +13,7 @@ cd4_panel = RequisitionPanel(
     aliquot_type=wb,
     processing_profile=cd4_processing)
 
-viral_load = RequisitionPanel(
+viral_load_panel = RequisitionPanel(
     name='viral_load',
     verbose_name='Viral Load',
     aliquot_type=wb,
@@ -25,19 +25,19 @@ pbmc_vl_panel = RequisitionPanel(
     aliquot_type=wb,
     processing_profile=pbmc_vl_processing)
 
-fasting_glucose = RequisitionPanel(
+fasting_glucose_panel = RequisitionPanel(
     name='fasting_glucose',
     verbose_name='Fasting Glucose',
     aliquot_type=wb,
     processing_profile=glucose_processing)
 
-glucose_1h = RequisitionPanel(
+glucose_1h_panel = RequisitionPanel(
     name='glucose_1h',
     verbose_name='Glucose 1h',
     aliquot_type=wb,
     processing_profile=glucose_processing)
 
-glucose_2h = RequisitionPanel(
+glucose_2h_panel = RequisitionPanel(
     name='glucose_2h',
     verbose_name='Glucose 2h',
     aliquot_type=wb,
@@ -55,7 +55,7 @@ elisa_panel = RequisitionPanel(
     aliquot_type=wb,
     processing_profile=elisa_processing)
 
-insulin = RequisitionPanel(
+insulin_panel = RequisitionPanel(
     name='insulin',
     verbose_name='Insulin',
     aliquot_type=wb,
