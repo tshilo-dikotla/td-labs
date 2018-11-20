@@ -1,6 +1,6 @@
 from edc_lab import RequisitionPanel
 
-from .aliquot_types import wb
+from .aliquot_type import wb
 
 from .processing_profiles import infant_glucose_processing
 from .processing_profiles import infant_serum_processing, infant_pbmc_pl_processing

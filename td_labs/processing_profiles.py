@@ -1,6 +1,6 @@
 from edc_lab import Process, ProcessingProfile
 
-from .aliquot_types import wb, pl, bc, serum, pbmc
+from .aliquot_type import wb, pl, bc, serum, pbmc
 
 viral_load_processing = ProcessingProfile(name='viral_load', aliquot_type=wb)
 vl_pl_process = Process(aliquot_type=pl, aliquot_count=3)
@@ -23,9 +23,9 @@ elisa_pbmc_process = Process(aliquot_type=pbmc, aliquot_count=1)
 elisa_processing.add_processes(elisa_pl_process, elisa_pbmc_process)
 
 pbmc_plasma_processing = ProcessingProfile(name='pbmc_plasma', aliquot_type=wb)
-pbmc_plasma_process = Process(aliquot_type=pl, aliquot_count=4)
+pl_plasma_process = Process(aliquot_type=pl, aliquot_count=4)
 pbmc_plasma_process = Process(aliquot_type=pbmc, aliquot_count=4)
-pbmc_plasma_processing.add_processes(pbmc_plasma_process, pbmc_plasma_process)
+pbmc_plasma_processing.add_processes(pl_plasma_process, pbmc_plasma_process)
 
 infant_glucose_processing = ProcessingProfile(
     name='infant_glucose', aliquot_type=wb)

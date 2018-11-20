@@ -1,6 +1,6 @@
 from edc_lab import RequisitionPanel
 
-from .aliquot_types import wb
+from .aliquot_type import wb
 
 from .processing_profiles import viral_load_processing, pbmc_vl_processing
 from .processing_profiles import glucose_processing, elisa_processing
