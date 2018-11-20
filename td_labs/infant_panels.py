@@ -1,10 +1,14 @@
-from edc_lab import RequisitionPanel
+from edc_lab import RequisitionPanel, LabProfile
+from edc_lab.site_labs import site_labs
 
-from .aliquot_type import wb
-
+from .aliquot_types import wb
+from .processing_profiles import dbs_processing, infant_insulin, dna_pcr
 from .processing_profiles import infant_glucose_processing
 from .processing_profiles import infant_serum_processing, infant_pbmc_pl_processing
-from .processing_profiles import dbs_processing, infant_insulin, dna_pcr
+
+infant_lab_profile = LabProfile(
+    name='td_infant_lab_profile',
+    requisition_model='td_infant.infantrequisition')
 
 infant_glucose_panel = RequisitionPanel(
     name='infant_glucose',
@@ -41,3 +45,12 @@ dbs_panel = RequisitionPanel(
     verbose_name='DBS (Store Only)',
     aliquot_type=wb,
     processing_profile=dbs_processing)
+
+infant_lab_profile.add_panel(infant_glucose_panel)
+infant_lab_profile.add_panel(infant_insulin)
+infant_lab_profile.add_panel(dna_pcr)
+infant_lab_profile.add_panel(serum_panel)
+infant_lab_profile.add_panel(infant_pbmc_pl_panel)
+infant_lab_profile.add_panel(dbs_panel)
+
+site_labs.register(infant_lab_profile)

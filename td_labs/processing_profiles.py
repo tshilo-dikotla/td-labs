@@ -1,6 +1,7 @@
 from edc_lab import Process, ProcessingProfile
 
-from .aliquot_type import wb, pl, bc, serum, pbmc
+from .aliquot_types import wb, pl, bc, serum, pbmc
+
 
 viral_load_processing = ProcessingProfile(name='viral_load', aliquot_type=wb)
 vl_pl_process = Process(aliquot_type=pl, aliquot_count=3)

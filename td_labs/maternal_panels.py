@@ -1,11 +1,15 @@
-from edc_lab import RequisitionPanel
+from edc_lab import RequisitionPanel, LabProfile
+from edc_lab.site_labs import site_labs
 
-from .aliquot_type import wb
-
-from .processing_profiles import viral_load_processing, pbmc_vl_processing
+from .aliquot_types import wb
+from .processing_profiles import cd4_processing, insulin
 from .processing_profiles import glucose_processing, elisa_processing
 from .processing_profiles import pbmc_plasma_processing
-from .processing_profiles import cd4_processing, insulin
+from .processing_profiles import viral_load_processing, pbmc_vl_processing
+
+maternal_lab_profile = LabProfile(
+    name='td_maternal_lab_profile',
+    requisition_model='td_maternal.maternalrequisition')
 
 cd4_panel = RequisitionPanel(
     name='cd4',
@@ -60,3 +64,15 @@ insulin_panel = RequisitionPanel(
     verbose_name='Insulin',
     aliquot_type=wb,
     processing_profile=insulin)
+
+maternal_lab_profile.add_panel(cd4_panel)
+maternal_lab_profile.add_panel(viral_load_panel)
+maternal_lab_profile.add_panel(pbmc_vl_panel)
+maternal_lab_profile.add_panel(fasting_glucose_panel)
+maternal_lab_profile.add_panel(glucose_1h_panel)
+maternal_lab_profile.add_panel(glucose_2h_panel)
+maternal_lab_profile.add_panel(pbmc_pl_panel)
+maternal_lab_profile.add_panel(elisa_panel)
+maternal_lab_profile.add_panel(insulin_panel)
+
+site_labs.register(maternal_lab_profile)
