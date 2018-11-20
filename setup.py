@@ -11,12 +11,12 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='td-labs',
-    version='0.1.3',
-    author=u'Leslie Kepaletswe',
-    author_email='leslie.kep@gmail.com',
+    version='0.1.0',
+    author=u'Coulson Kgathi',
+    author_email='ckgathi@gmail.com',
     packages=find_packages(),
     include_package_data=True,
-    url='https://github.com/td-labs/td-labs',
+    url='https://github.com/tshilo-dikotla/td-labs',
     license='GPL license, see LICENSE',
     description='td tshilo-dikotla lab modules',
     long_description=README,
