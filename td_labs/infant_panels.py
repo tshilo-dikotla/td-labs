@@ -5,6 +5,7 @@ from .aliquot_types import wb
 from .processing_profiles import dbs_processing, infant_insulin, dna_pcr
 from .processing_profiles import infant_glucose_processing
 from .processing_profiles import infant_serum_processing, infant_pbmc_pl_processing
+from td_labs.processing_profiles import elisa_processing
 
 infant_lab_profile = LabProfile(
     name='td_infant_lab_profile',
@@ -46,11 +47,18 @@ dbs_panel = RequisitionPanel(
     aliquot_type=wb,
     processing_profile=dbs_processing)
 
+infant_elisa_panel = RequisitionPanel(
+    name='elisa',
+    verbose_name='ELISA',
+    aliquot_type=wb,
+    processing_profile=elisa_processing)
+
 infant_lab_profile.add_panel(infant_glucose_panel)
 infant_lab_profile.add_panel(infant_insulin)
 infant_lab_profile.add_panel(dna_pcr)
 infant_lab_profile.add_panel(serum_panel)
 infant_lab_profile.add_panel(infant_pbmc_pl_panel)
 infant_lab_profile.add_panel(dbs_panel)
+infant_lab_profile.add_panel(infant_elisa_panel)
 
 site_labs.register(infant_lab_profile)
