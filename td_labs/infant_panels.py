@@ -50,8 +50,8 @@ dbs_panel = RequisitionPanel(
     processing_profile=dbs_processing)
 
 infant_elisa_panel = RequisitionPanel(
-    name='infant_elisa',
-    verbose_name='ELISA',
+    name='elisa',
+    verbose_name='Infant Elisa',
     aliquot_type=wb,
     processing_profile=elisa_processing)
 
