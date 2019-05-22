@@ -53,3 +53,6 @@ infant_insulin = ProcessingProfile(name='infant_insulin', aliquot_type=wb)
 insulin = ProcessingProfile(name='insulin', aliquot_type=wb)
 
 dna_pcr = ProcessingProfile(name='dna_pcr', aliquot_type=wb)
+
+infant_wholeblood_processing = ProcessingProfile(
+    name='infant_wb', aliquot_type=wb)
