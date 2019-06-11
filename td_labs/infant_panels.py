@@ -1,13 +1,11 @@
 from edc_lab import RequisitionPanel, LabProfile
 from edc_lab.site_labs import site_labs
 
-
 from .aliquot_types import wb
 from .processing_profiles import dbs_processing, infant_insulin, dna_pcr
 from .processing_profiles import infant_glucose_processing, elisa_processing
 from .processing_profiles import infant_serum_processing, infant_pbmc_pl_processing
-from .processing_profiles import infant_wholeblood_processing
-
+from .processing_profiles import infant_wholeblood_processing, infant_paxgene_processing
 
 infant_lab_profile = LabProfile(
     name='td_infant_lab_profile',
@@ -62,6 +60,13 @@ infant_wb_panel = RequisitionPanel(
     processing_profile=infant_wholeblood_processing
 )
 
+infant_paxgene_panel = RequisitionPanel(
+    name='infant_paxgene',
+    verbose_name='Infant Paxgene',
+    aliquot_type=wb,
+    processing_profile=infant_paxgene_processing
+)
+
 infant_lab_profile.add_panel(infant_glucose_panel)
 infant_lab_profile.add_panel(infant_insulin)
 infant_lab_profile.add_panel(dna_pcr)
@@ -70,5 +75,6 @@ infant_lab_profile.add_panel(infant_pbmc_pl_panel)
 infant_lab_profile.add_panel(dbs_panel)
 infant_lab_profile.add_panel(infant_elisa_panel)
 infant_lab_profile.add_panel(infant_wb_panel)
+infant_lab_profile.add_panel(infant_paxgene_panel)
 
 site_labs.register(infant_lab_profile)

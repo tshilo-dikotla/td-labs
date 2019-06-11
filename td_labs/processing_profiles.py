@@ -2,12 +2,10 @@ from edc_lab import Process, ProcessingProfile
 
 from .aliquot_types import wb, pl, bc, serum, pbmc
 
-
 viral_load_processing = ProcessingProfile(name='viral_load', aliquot_type=wb)
 vl_pl_process = Process(aliquot_type=pl, aliquot_count=3)
 vl_bc_process = Process(aliquot_type=bc, aliquot_count=1)
 viral_load_processing.add_processes(vl_pl_process, vl_bc_process)
-
 
 pbmc_vl_processing = ProcessingProfile(name='pbmc_vl', aliquot_type=wb)
 pbmc_pl_process = Process(aliquot_type=pl, aliquot_count=4)
@@ -56,3 +54,6 @@ dna_pcr = ProcessingProfile(name='dna_pcr', aliquot_type=wb)
 
 infant_wholeblood_processing = ProcessingProfile(
     name='infant_wb', aliquot_type=wb)
+
+infant_paxgene_processing = ProcessingProfile(
+    name='infant_paxgene', aliquot_type=wb)
