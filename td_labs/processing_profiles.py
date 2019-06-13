@@ -37,10 +37,20 @@ infant_serum_processing.add_processes(infant_serum_process)
 
 infant_pbmc_pl_processing = ProcessingProfile(
     name='infant_pbmc_pl', aliquot_type=wb)
+
 infant_pl_process = Process(aliquot_type=pl, aliquot_count=2)
 infant_pbmc_process = Process(aliquot_type=pbmc, aliquot_count=7)
 infant_pbmc_pl_processing.add_processes(
     infant_pl_process, infant_pbmc_process)
+
+karabo_pbmc_pl_processing = ProcessingProfile(
+    name='infant_pbmc_pl', aliquot_type=wb)
+
+karabo_pl_process = Process(aliquot_type=pl, aliquot_count=3)
+karabo_pbmc_process = Process(aliquot_type=pbmc, aliquot_count=3)
+
+karabo_pbmc_pl_processing.add_processes(
+    karabo_pl_process, karabo_pbmc_process)
 
 dbs_processing = ProcessingProfile(name='dbs', aliquot_type=wb)
 
