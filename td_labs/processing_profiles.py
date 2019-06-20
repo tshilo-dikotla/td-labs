@@ -44,7 +44,7 @@ infant_pbmc_pl_processing.add_processes(
     infant_pl_process, infant_pbmc_process)
 
 karabo_pbmc_pl_processing = ProcessingProfile(
-    name='infant_pbmc_pl', aliquot_type=wb)
+    name='karabo_pbmc_pl', aliquot_type=wb)
 
 karabo_pl_process = Process(aliquot_type=pl, aliquot_count=3)
 karabo_pbmc_process = Process(aliquot_type=pbmc, aliquot_count=3)
