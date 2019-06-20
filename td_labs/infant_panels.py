@@ -6,6 +6,7 @@ from .processing_profiles import dbs_processing, infant_insulin, dna_pcr
 from .processing_profiles import infant_glucose_processing, elisa_processing
 from .processing_profiles import infant_serum_processing, infant_pbmc_pl_processing
 from .processing_profiles import infant_wholeblood_processing, infant_paxgene_processing
+from .processing_profiles import karabo_pbmc_pl_processing, karabo_wb_pbmc_pl_processing
 
 infant_lab_profile = LabProfile(
     name='td_infant_lab_profile',
@@ -57,7 +58,14 @@ karabo_wb_pbmc_pl_panel = RequisitionPanel(
     name='karabo_wb_pbmc_pl',
     verbose_name='Karabo WBA/PBMC/PLA ',
     aliquot_type=wb,
-    processing_profile=infant_wholeblood_processing
+    processing_profile=karabo_wb_pbmc_pl_processing
+)
+
+karabo_pbmc_pl_panel = RequisitionPanel(
+    name='karabo_pbmc_pl',
+    verbose_name='Karabo PBMC/PLA ',
+    aliquot_type=wb,
+    processing_profile=karabo_pbmc_pl_processing
 )
 
 infant_paxgene_panel = RequisitionPanel(
@@ -75,6 +83,7 @@ infant_lab_profile.add_panel(infant_pbmc_pl_panel)
 infant_lab_profile.add_panel(dbs_panel)
 infant_lab_profile.add_panel(infant_elisa_panel)
 infant_lab_profile.add_panel(infant_paxgene_panel)
+infant_lab_profile.add_panel(karabo_pbmc_pl_panel)
 infant_lab_profile.add_panel(karabo_wb_pbmc_pl_panel)
 
 site_labs.register(infant_lab_profile)
