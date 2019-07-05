@@ -1,2 +1,2 @@
-# td-labs
-tshilo -dikotla sample definition
+# td-lab
+Tshilo Dikotla requisition and lab definitions
