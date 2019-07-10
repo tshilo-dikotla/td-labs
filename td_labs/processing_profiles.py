@@ -22,17 +22,11 @@ elisa_pbmc_process = Process(aliquot_type=pbmc, aliquot_count=1)
 elisa_processing.add_processes(elisa_pl_process, elisa_pbmc_process)
 
 infant_pbmc_plasma_processing = ProcessingProfile(
-    name='pbmc_plasma', aliquot_type=wb)
+    name='pbmc_plasma_store', aliquot_type=wb)
 pl_plasma_process = Process(aliquot_type=pl, aliquot_count=4)
 pbmc_plasma_process = Process(aliquot_type=pbmc, aliquot_count=4)
 infant_pbmc_plasma_processing.add_processes(
     pl_plasma_process, pbmc_plasma_process)
-
-infant_pbmc_pl_processing = ProcessingProfile(
-    name='pbmc_plasma', aliquot_type=wb)
-plasma_process = Process(aliquot_type=pl, aliquot_count=2)
-pbmc_process = Process(aliquot_type=pbmc, aliquot_count=7)
-infant_pbmc_pl_processing.add_processes(plasma_process, pbmc_process)
 
 infant_glucose_processing = ProcessingProfile(
     name='infant_glucose', aliquot_type=wb)
@@ -45,7 +39,6 @@ infant_serum_processing.add_processes(infant_serum_process)
 
 infant_pbmc_pl_processing = ProcessingProfile(
     name='infant_pbmc_pl', aliquot_type=wb)
-
 infant_pl_process = Process(aliquot_type=pl, aliquot_count=2)
 infant_pbmc_process = Process(aliquot_type=pbmc, aliquot_count=7)
 infant_pbmc_pl_processing.add_processes(
