@@ -4,9 +4,11 @@ from edc_lab.site_labs import site_labs
 from .aliquot_types import wb
 from .processing_profiles import dbs_processing, infant_insulin, dna_pcr
 from .processing_profiles import infant_glucose_processing, elisa_processing
-from .processing_profiles import infant_serum_processing, infant_pbmc_pl_processing
+from .processing_profiles import infant_pbmc_pl_processing
+from .processing_profiles import infant_serum_processing, infant_pbmc_plasma_processing
 from .processing_profiles import infant_wholeblood_processing, infant_paxgene_processing
 from .processing_profiles import karabo_pbmc_pl_processing, karabo_wb_pbmc_pl_processing
+
 
 infant_lab_profile = LabProfile(
     name='td_infant_lab_profile',
@@ -36,8 +38,14 @@ serum_panel = RequisitionPanel(
     aliquot_type=wb,
     processing_profile=infant_serum_processing)
 
-infant_pbmc_pl_panel = RequisitionPanel(
+infant_pbmc_pl_store_panel = RequisitionPanel(
     name='infant_pbmc_pl_store',
+    verbose_name='PBMC Plasma (STORE ONLY)',
+    aliquot_type=wb,
+    processing_profile=infant_pbmc_plasma_processing)
+
+infant_pbmc_pl_panel = RequisitionPanel(
+    name='infant_pbmc_pl',
     verbose_name='Infant PBMC PL',
     aliquot_type=wb,
     processing_profile=infant_pbmc_pl_processing)
@@ -79,6 +87,7 @@ infant_lab_profile.add_panel(infant_glucose_panel)
 infant_lab_profile.add_panel(infant_insulin)
 infant_lab_profile.add_panel(dna_pcr)
 infant_lab_profile.add_panel(serum_panel)
+infant_lab_profile.add_panel(infant_pbmc_pl_store_panel)
 infant_lab_profile.add_panel(infant_pbmc_pl_panel)
 infant_lab_profile.add_panel(dbs_panel)
 infant_lab_profile.add_panel(infant_elisa_panel)
