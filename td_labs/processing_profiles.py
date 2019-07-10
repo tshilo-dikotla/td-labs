@@ -28,6 +28,11 @@ pbmc_plasma_process = Process(aliquot_type=pbmc, aliquot_count=4)
 infant_pbmc_plasma_processing.add_processes(
     pl_plasma_process, pbmc_plasma_process)
 
+pbmc_plasma_processing = ProcessingProfile(
+    name='pbmc_plasma_store', aliquot_type=wb)
+pbmc_plasma_processing.add_processes(
+    pl_plasma_process, pbmc_plasma_process)
+
 infant_glucose_processing = ProcessingProfile(
     name='infant_glucose', aliquot_type=wb)
 infant_gluc_process = Process(aliquot_type=pl, aliquot_count=1)
